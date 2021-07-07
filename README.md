@@ -1,4 +1,4 @@
-# REACT NATIVE 에 contextAPI, styed-component 구축 샘플
+# REACT NATIVE - contextAPI, styed-component 구축 샘플
 
 ## expo 설치 및 초기설정
 
