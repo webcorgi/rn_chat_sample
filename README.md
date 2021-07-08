@@ -71,3 +71,13 @@ const TextIntro = styled.Text`
 
 ./src/components/       -> state, actions 실제사용방법 참고
 ```
+
+## docker로 웹소켓 연결 실패뜸.. 해결방법
+
+#### 웹소켓 연결 안되는 이유?
+
+- docker를 이용해 로컬서버를 구축해놨는데, expo를 이용해 폰으로 열면 localhost:8081 port를 인식하지 못함.
+
+#### 해결방법
+
+- expo를 열고, Run in web browser로 실행해서 웹에서 띄워 작업해야함.

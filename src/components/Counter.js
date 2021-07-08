@@ -20,13 +20,15 @@ function Counter() {
 
     return (
         <Container>
-            <BtnPlus onPress={clickPlus}>
-                <TextMinus>-</TextMinus>
-            </BtnPlus>
-            <TextNum>{state.counterStates.counter}</TextNum>
             <BtnMinus onPress={clickMinus}>
-                <TextPlus>+</TextPlus>
+                <TextPlus>-</TextPlus>
             </BtnMinus>
+            
+            <TextNum>{state.counterStates.counter}</TextNum>
+            
+            <BtnPlus onPress={clickPlus}>
+                <TextMinus>+</TextMinus>
+            </BtnPlus>
         </Container>
     );
 }
