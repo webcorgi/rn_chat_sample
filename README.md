@@ -20,23 +20,24 @@ expo start
 
 ## styled-component
 
+#### 설치
+
 ```
-// 설치
 npm install --save styled-components
 ```
 
-```
-// 설정 - babel.config.js에 아래소스 추가
+#### 설정 - babel.config.js에 아래소스 추가
 
+```
 module.exports = {
   ...
   plugins: ['babel-plugin-styled-components'],
 };
 ```
 
-```
-// 사용
+#### 사용
 
+```
 ...
 import styled from 'styled-components/native';
 
