@@ -20,15 +20,15 @@ function Counter() {
 
     return (
         <Container>
-            <BtnMinus onPress={clickMinus}>
-                <TextPlus>-</TextPlus>
-            </BtnMinus>
+            <BtnCount onPress={clickMinus}>
+                <InnerText>-</InnerText>
+            </BtnCount>
             
             <TextNum>{state.counterStates.counter}</TextNum>
             
-            <BtnPlus onPress={clickPlus}>
-                <TextMinus>+</TextMinus>
-            </BtnPlus>
+            <BtnCount onPress={clickPlus}>
+                <InnerText>+</InnerText>
+            </BtnCount>
         </Container>
     );
 }
@@ -47,28 +47,17 @@ const Container = styled.View`
     background-color: #f5fcff;
 `;
 
-const BtnPlus = styled.TouchableOpacity`
+const BtnCount = styled.TouchableOpacity`
     width:50px;
     height:50px;
     border:1px solid #ddd;
 `;
 
-const BtnMinus = styled.TouchableOpacity`
-    width:50px;
+const InnerText = styled.Text`
+    font-size:50px;
     height:50px;
-    border:1px solid #ddd;
-`;
-
-const TextPlus = styled.Text`
-    font-size:50px;
+    line-height:40px;
     text-align: center;
-    line-height: 52px;
-`;
-
-const TextMinus = styled.Text`
-    font-size:50px;
-    text-align: center;
-    line-height: 52px;
 `;
 
 const TextNum = styled.Text`
