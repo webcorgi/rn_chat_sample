@@ -1,6 +1,8 @@
 import React, {useCallback, useEffect} from 'react';
 import {StoreContext} from "../context/storeContext";
 import useWebSocket, {ReadyState} from "react-native-use-websocket";
+import { AuthSignup } from "../utils/auth";
+
 
 export const InitializeWebsocket = () => {
     const {state, actions} = React.useContext(StoreContext)
@@ -19,6 +21,22 @@ export const InitializeWebsocket = () => {
         [ReadyState.CLOSED]: 'Closed',
         [ReadyState.UNINSTANTIATED]: 'Uninstantiated',
     }[readyState];
+
+/* 회원가입 통신 테스트 => 성공
+    useEffect(() => {
+        setTimeout(() => {
+            sendMessage(
+                JSON.stringify(AuthSignup('daehyun', 'emailemail@com', 'asdfzxcv!@'))
+            );
+        }, 3000)
+    }, []);
+ */
+
+    useEffect(() => {
+        if (lastMessage !== null) {
+            console.log(lastMessage.data)
+        }
+    }, [lastMessage])
 
     useEffect(() => {
         if (connectionStatus === 'Open') {

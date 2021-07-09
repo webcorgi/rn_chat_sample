@@ -31,7 +31,7 @@ const decrease = (props) => (
 
 // 여기선 추가로 boolean 파라미터를 받음. 
 // 그 이유는 true인지 false인지 체크해서 업데이트한 후에, 화면에 보이는 글자를 변경할 것이기 때문임 !
-const ChangeCounterText = (props, trueFalse) => (
+const counterText = (props, trueFalse) => (
     props.dispatch({
         type:IS_COUNTING,
         isCount:trueFalse
@@ -49,9 +49,9 @@ const counterActions = (props) => {
         onDecrease:() => {
             decrease(props);
         },
-        ChangeCounterText:( trueFalse ) => {
-            ChangeCounterText(props, trueFalse);
-        }
+        changeCounterText:( trueFalse ) => {
+            counterText(props, trueFalse);
+        },
     }
 }
 /* 

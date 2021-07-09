@@ -2,8 +2,9 @@ import React, {useContext} from "react";
 import { StatusBar } from 'expo-status-bar';
 import styled from 'styled-components/native';
 import Counter from './src/components/Counter';
-import { StoreProvider } from './src/context/storeContext'
 import CountingText from './src/components/CountingText'
+import Signup from './src/components/Signup'
+import { StoreProvider } from './src/context/storeContext'
 import {InitializeWebsocket} from "./src/ws";
 /**
  * StoreProvider = Store를 최상위에 등록함.
@@ -29,8 +30,9 @@ export default function App() {
     <WebsocketContext.Provider value={value}>
       <StoreProvider>
         <Container>
-          <CountingText />
-          <Counter />
+          {/* <CountingText />
+          <Counter /> */}
+          <Signup />
         </Container>
       </StoreProvider>
     </WebsocketContext.Provider>
