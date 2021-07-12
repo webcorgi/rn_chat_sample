@@ -1,21 +1,21 @@
-import React, {useState, useContext} from 'react';
-import {StoreContext} from "../context/storeContext";
+import React from 'react';
 import styled from 'styled-components/native';
+import { actions } from '../context/actions'
+import { useSelector, useDispatch } from 'react-redux';
+
 
 function Counter() {
-    // 전역 어디서든 아래의 소스로 state, actions를 가져와 사용하면 끝.
-    const {state, actions} = useContext(StoreContext);
+    const dispatch = useDispatch();
+    const { counter } = useSelector(state => state.counterReducer)
+
+    const clickMinus = () => {
+        dispatch(actions.decrease());
+        dispatch(actions.counterText(true));
+    }
 
     const clickPlus = () => {
-        console.log("🚀 ~ file: Counter.js ~ line 10 ~ clickPlus ~ clickPlus")
-        actions.counterActions.onIncrease();
-        actions.counterActions.ChangeCounterText(true);
-    }
-    
-    const clickMinus = () => {
-        console.log("🚀 ~ file: Counter.js ~ line 16 ~ clickMinus ~ clickMinus")
-        actions.counterActions.onDecrease();
-        actions.counterActions.ChangeCounterText(true);
+        dispatch(actions.increase());
+        dispatch(actions.counterText(true));
     }
 
     return (
@@ -24,7 +24,7 @@ function Counter() {
                 <InnerText>-</InnerText>
             </BtnCount>
             
-            <TextNum>{state.counterStates.counter}</TextNum>
+            <TextNum>{counter}</TextNum>
             
             <BtnCount onPress={clickPlus}>
                 <InnerText>+</InnerText>

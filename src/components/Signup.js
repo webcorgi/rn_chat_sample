@@ -1,4 +1,4 @@
-import React, {useState, useContext, useCallback} from 'react';
+/* import React, {useState, useContext, useCallback} from 'react';
 import {StoreContext} from "../context/storeContext";
 import styled from 'styled-components/native';
 import { AuthSignup } from '../utils/auth';
@@ -6,7 +6,6 @@ import {InitializeWebsocket} from "../ws";
 
 
 function Signup() {
-    // 전역 어디서든 아래의 소스로 state, actions를 가져와 사용하면 끝.
     const {state, actions} = useContext(StoreContext);
 
     const [name, setName] = useState('');
@@ -59,9 +58,6 @@ function Signup() {
 
 export default Signup;
 
-/*********************************************************
-* styling
-*********************************************************/
 const Container = styled.View`
     flex:1;
     justify-content: center;
@@ -108,4 +104,4 @@ const BtnOuter = styled.View`
 const BtnInner = styled.Button`
     color:#fff;
     height:150px;
-`;
+`; */
