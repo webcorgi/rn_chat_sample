@@ -9,13 +9,13 @@ function Counter() {
     const clickPlus = () => {
         console.log("🚀 ~ file: Counter.js ~ line 10 ~ clickPlus ~ clickPlus")
         actions.counterActions.onIncrease();
-        actions.counterActions.ChangeCounterText(true);
+        actions.counterActions.changeCounterText(true);
     }
     
     const clickMinus = () => {
         console.log("🚀 ~ file: Counter.js ~ line 16 ~ clickMinus ~ clickMinus")
         actions.counterActions.onDecrease();
-        actions.counterActions.ChangeCounterText(true);
+        actions.counterActions.changeCounterText(true);
     }
 
     return (

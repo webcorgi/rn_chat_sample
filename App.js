@@ -30,9 +30,9 @@ export default function App() {
     <WebsocketContext.Provider value={value}>
       <StoreProvider>
         <Container>
-          {/* <CountingText />
-          <Counter /> */}
-          <Signup />
+          <CountingText />
+          <Counter />
+          {/* <Signup /> */}
         </Container>
       </StoreProvider>
     </WebsocketContext.Provider>
