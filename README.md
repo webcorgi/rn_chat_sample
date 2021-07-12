@@ -2,6 +2,9 @@
 
 ## git branch에 redux, contextAPI 구조 정리되어 있으므로 참고.
 
+Redux vs ContextAPI
+참고 : https://velog.io/@cada/React-Redux-vs-Context-API#redux%EB%9E%80-
+
 ## expo 설치 및 초기설정
 
 ```
