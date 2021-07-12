@@ -20,10 +20,10 @@ const counterReducer = (state, action) => {
                 ...state,
                 counter:state.counter - 1
             };
-        case types.IS_COUNTING:
+        case types.IS_COUNTING: 
             return{
                 ...state,
-                isCounter:state.isCount
+                isCounter:state.isCount 
             };
         default:
             return state; // 기본 값 설정. 파라미터가 undefiend인 경우를 대비
