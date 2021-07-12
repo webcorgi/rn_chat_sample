@@ -4,37 +4,40 @@ import styled from 'styled-components/native';
 import Counter from './src/components/Counter';
 import CountingText from './src/components/CountingText'
 import Signup from './src/components/Signup'
-import { StoreProvider } from './src/context/storeContext'
 import {InitializeWebsocket} from "./src/ws";
-/**
- * StoreProvider = Store를 최상위에 등록함.
- * contextAPI 라는 이름 그대로 상태(state)를 API처럼 전역 어디서든 쓸 수 있게 한다.
- * 
- * components폴더에서 실제사용법 확인하면 됨.
- */
+import { Provider } from 'react-redux'; // redux를 API화 시켜줄 객체
+import { createStore } from 'redux'; // store 생성객체
+import { reducers } from './src/context/reducers'; // store에 담을 reducer
+import { composeWithDevTools } from 'redux-devtools-extension'; // 개발도구
+
 
 export const WebsocketContext = React.createContext({
   handleWebsocketClose: () => {}
 })
 
-
 export default function App() {
 
+  // websocket
   const {handleWebsocketClose} = InitializeWebsocket()
   const value = React.useMemo(() => ({handleWebsocketClose}), [handleWebsocketClose])
+
+  // redux
+  const store = createStore(reducers, composeWithDevTools() );
+  console.log(store.getState());
+  window.store = store; // console에서 확인 가능해짐
 
   return (
     <>
     <StatusBar style="auto" />
 
     <WebsocketContext.Provider value={value}>
-      <StoreProvider>
+      <Provider store={store}>
         <Container>
-          {/* <CountingText />
-          <Counter /> */}
-          <Signup />
+          <CountingText />
+          <Counter />
+          {/* <Signup /> */}
         </Container>
-      </StoreProvider>
+      </Provider>
     </WebsocketContext.Provider>
     </>
   );

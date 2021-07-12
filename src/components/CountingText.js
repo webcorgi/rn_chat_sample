@@ -1,14 +1,14 @@
 import React, {useState, useContext} from 'react';
-import {StoreContext} from "../context/storeContext";
 import styled from 'styled-components/native';
+import { useSelector } from 'react-redux';
+
 
 function CountingText() {
-    // 전역 어디서든 아래의 소스로 state, actions를 가져와 사용하면 끝.
-    const {state, actions} = useContext(StoreContext);
+    const { isCounter } = useSelector(state => state.counterReducer)
 
     return (
         <>
-        {state.counterStates.isCounter === false 
+        {isCounter === false 
             ? <TextBefore>CountingMe</TextBefore>
             : <TextAfter>youCountedMe</TextAfter>
         }
