@@ -1,4 +1,4 @@
-# REACT NATIVE - contextAPI, styed-component 구축 샘플
+# REACT NATIVE - redux version
 
 ## redux
 
@@ -7,6 +7,8 @@
 ```
 yarn add redux react-redux redux-devtools-extension
 ```
+
+- redux-devtools-extension : 개발자도구에서 redux 확인가능하게 해주는 라이브러리
 
 #### 주요 컨셉 & 키워드
 
