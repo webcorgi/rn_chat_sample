@@ -1,4 +1,4 @@
-# REACT NATIVE - contextAPI, styed-component 구축 샘플
+# REACT NATIVE - contextAPI version
 
 #### contextAPI
 
