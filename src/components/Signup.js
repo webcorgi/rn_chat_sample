@@ -5,7 +5,7 @@ import { AuthSignup } from '../utils/auth';
 import {InitializeWebsocket} from "../ws";
 
 
-function Signup() {
+function Signup({ navigation }) {
     // 전역 어디서든 아래의 소스로 state, actions를 가져와 사용하면 끝.
     const {state, actions} = useContext(StoreContext);
 
@@ -16,9 +16,10 @@ function Signup() {
     const {sendMessage} = InitializeWebsocket();
     
     const clickSignup = () => {
-        sendMessage(
+        navigation.navigate('SubScreen')
+       /*  sendMessage(
             JSON.stringify( AuthSignup(name, email, pwd) )
-        )
+        ) */
     }
 
     return (

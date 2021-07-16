@@ -1,22 +1,17 @@
 import React, {useContext} from "react";
-import { StatusBar } from 'expo-status-bar';
 import styled from 'styled-components/native';
-import Counter from './src/components/Counter';
-import CountingText from './src/components/CountingText'
-import Signup from './src/components/Signup'
 import { StoreProvider } from './src/context/storeContext'
 import {InitializeWebsocket} from "./src/ws";
-/**
- * StoreProvider = Store를 최상위에 등록함.
- * contextAPI 라는 이름 그대로 상태(state)를 API처럼 전역 어디서든 쓸 수 있게 한다.
- * 
- * components폴더에서 실제사용법 확인하면 됨.
- */
+import { createStackNavigator } from '@react-navigation/stack';
+import { NavigationContainer } from '@react-navigation/native';
+import SubScreen from "./src/Screen/SubScreen";
+import HomeScreen from "./src/Screen/HomeScreen";
+
+const Stack = createStackNavigator();
 
 export const WebsocketContext = React.createContext({
   handleWebsocketClose: () => {}
 })
-
 
 export default function App() {
 
@@ -24,19 +19,16 @@ export default function App() {
   const value = React.useMemo(() => ({handleWebsocketClose}), [handleWebsocketClose])
 
   return (
-    <>
-    <StatusBar style="auto" />
-
     <WebsocketContext.Provider value={value}>
       <StoreProvider>
-        <Container>
-          {/* <CountingText />
-          <Counter /> */}
-          <Signup />
-        </Container>
+        <NavigationContainer>
+          <Stack.Navigator>
+            <Stack.Screen name="HomeScreen" component={HomeScreen} />
+            <Stack.Screen name="SubScreen" component={SubScreen} />
+          </Stack.Navigator>
+        </NavigationContainer>
       </StoreProvider>
-    </WebsocketContext.Provider>
-    </>
+    </WebsocketContext.Provider> 
   );
 }
 

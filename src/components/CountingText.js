@@ -8,10 +8,7 @@ function CountingText() {
 
     return (
         <>
-        {state.counterStates.isCounter === false 
-            ? <TextBefore>CountingMe</TextBefore>
-            : <TextAfter>youCountedMe</TextAfter>
-        }
+            <TextBefore>CountingMe</TextBefore>
         </>
     );
 }

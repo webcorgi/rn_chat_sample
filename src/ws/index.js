@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import {StoreContext} from "../context/storeContext";
 import useWebSocket, {ReadyState} from "react-native-use-websocket";
 import { AuthSignup } from "../utils/auth";
@@ -11,7 +11,7 @@ export const InitializeWebsocket = () => {
     const {sendMessage, lastMessage, readyState, getWebSocket} = useWebSocket("ws://localhost:8081/api/v1/ws", { // connection testURL =>  wss://echo.websocket.org
         shouldReconnect: (closeEvent) => true,
         reconnectAttempts: 10,
-        reconnectInterval: 5000,
+        reconnectInterval: 10000,
     });
 
     const connectionStatus = {

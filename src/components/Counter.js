@@ -24,7 +24,7 @@ function Counter() {
                 <InnerText>-</InnerText>
             </BtnCount>
             
-            <TextNum>{state.counterStates.counter}</TextNum>
+            {/* <TextNum>{state.counterStates.counter}</TextNum> */}
             
             <BtnCount onPress={clickPlus}>
                 <InnerText>+</InnerText>
