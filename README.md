@@ -1,4 +1,4 @@
-# REACT NATIVE - contextAPI or redux, styed-component 구축 샘플
+# REACT NATIVE - nanoIT 실습생용 contextAPI or redux, styed-component 구축 샘플
 
 ## git branch에 redux, contextAPI 구조 정리되어 있으므로 참고.
 
